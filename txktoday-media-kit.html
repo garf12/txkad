@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TXKtoday — Media Kit 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #F07B20;
+    --orange-light: #F9A825;
+    --dark: #111111;
+    --off-white: #FAF8F5;
+    --warm-gray: #E8E3DC;
+    --text: #2A2A2A;
+    --text-muted: #6B6560;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(17,17,17,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 2px solid var(--orange);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; color: #fff; letter-spacing: 2px;
+  }
+  .nav-logo span { color: var(--orange); }
+  nav a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: var(--orange); }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-cta {
+    background: var(--orange); color: #fff !important; padding: 0.6rem 1.4rem;
+    border-radius: 4px; font-weight: 700; transition: transform 0.2s, background 0.3s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); background: #d96a10; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    background: var(--dark);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(240,123,32,0.15), transparent),
+      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(240,123,32,0.08), transparent);
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto;
+    padding: 8rem 3rem 4rem;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(240,123,32,0.15); border: 1px solid rgba(240,123,32,0.3);
+    border-radius: 100px; padding: 0.4rem 1.2rem;
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--orange); margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease;
+  }
+  .hero-tag::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--orange); animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    line-height: 0.95; color: #fff;
+    letter-spacing: 2px;
+    animation: fadeInUp 0.8s ease 0.15s both;
+  }
+  .hero h1 em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; color: var(--orange);
+  }
+  .hero-sub {
+    font-size: 1.1rem; color: rgba(255,255,255,0.6);
+    line-height: 1.7; margin-top: 1.5rem; max-width: 480px;
+    animation: fadeInUp 0.8s ease 0.3s both;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.45s both;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 1.8rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .stat-card:hover {
+    border-color: rgba(240,123,32,0.4);
+    transform: translateY(-2px);
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem; color: var(--orange); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.8rem; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.3rem;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTION COMMON */
+  section { padding: 6rem 3rem; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px;
+    color: var(--orange); font-weight: 700; margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    line-height: 1; letter-spacing: 1px;
+  }
+  .section-title em {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; color: var(--orange);
+  }
+
+  /* ABOUT */
+  .about { background: var(--off-white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    margin-top: 3rem; align-items: start;
+  }
+  .about-text { font-size: 1.05rem; line-height: 1.8; color: var(--text-muted); }
+  .about-highlights {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .highlight-card {
+    background: #fff; border-radius: 12px; padding: 1.5rem;
+    border: 1px solid var(--warm-gray);
+    transition: box-shadow 0.3s, transform 0.3s;
+  }
+  .highlight-card:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+  }
+  .highlight-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1rem; margin-bottom: 0.8rem;
+  }
+  .highlight-card h4 {
+    font-size: 0.85rem; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 0.3rem;
+  }
+  .highlight-card p { font-size: 0.85rem; color: var(--text-muted); }
+
+  /* PROCESS */
+  .process { background: var(--dark); color: #fff; }
+  .process .section-title { color: #fff; }
+  .timeline { margin-top: 3rem; position: relative; }
+  .timeline::before {
+    content: ''; position: absolute; left: 24px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--orange), rgba(240,123,32,0.1));
+  }
+  .tl-step {
+    display: flex; gap: 2rem; padding: 1.5rem 0;
+    position: relative;
+    opacity: 0; animation: fadeInUp 0.6s ease forwards;
+  }
+  .tl-step:nth-child(1) { animation-delay: 0.1s; }
+  .tl-step:nth-child(2) { animation-delay: 0.2s; }
+  .tl-step:nth-child(3) { animation-delay: 0.3s; }
+  .tl-step:nth-child(4) { animation-delay: 0.4s; }
+  .tl-step:nth-child(5) { animation-delay: 0.5s; }
+  .tl-step:nth-child(6) { animation-delay: 0.6s; }
+  .tl-step:nth-child(7) { animation-delay: 0.7s; }
+  .tl-dot {
+    width: 50px; height: 50px; min-width: 50px;
+    border-radius: 50%; background: var(--dark);
+    border: 2px solid var(--orange);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem;
+    color: var(--orange); z-index: 2;
+    transition: background 0.3s, color 0.3s;
+  }
+  .tl-step:hover .tl-dot { background: var(--orange); color: #fff; }
+  .tl-content h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem;
+  }
+  .tl-content p {
+    font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.6;
+  }
+
+  /* PLANS */
+  .plans { background: var(--off-white); }
+  .plans-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .plan-card {
+    background: #fff; border-radius: 16px; padding: 2.5rem 2rem;
+    border: 1px solid var(--warm-gray);
+    position: relative; overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  }
+  .plan-card.featured {
+    border: 2px solid var(--orange);
+    background: linear-gradient(180deg, #fff 0%, #FFF8F0 100%);
+  }
+  .plan-card.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute; top: 16px; right: -32px;
+    background: var(--orange); color: #fff;
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 2px;
+    padding: 0.3rem 2.5rem;
+    transform: rotate(45deg);
+  }
+  .plan-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; letter-spacing: 1px;
+  }
+  .plan-impressions {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-muted); margin-top: 0.2rem;
+  }
+  .plan-price {
+    margin: 1.5rem 0;
+    display: flex; align-items: baseline; gap: 0.3rem;
+  }
+  .plan-price .amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; color: var(--orange); line-height: 1;
+  }
+  .plan-price .period { font-size: 0.9rem; color: var(--text-muted); }
+  .plan-annual {
+    font-size: 0.8rem; color: var(--text-muted);
+    padding: 0.5rem 0; border-top: 1px solid var(--warm-gray);
+    margin-bottom: 1.5rem;
+  }
+  .plan-annual strong { color: var(--text); }
+  .plan-features { list-style: none; margin-bottom: 2rem; }
+  .plan-features li {
+    font-size: 0.88rem; padding: 0.5rem 0;
+    padding-left: 1.5rem; position: relative;
+    color: var(--text-muted);
+  }
+  .plan-features li::before {
+    content: '\2713'; position: absolute; left: 0;
+    color: var(--orange); font-weight: 700;
+  }
+  .plan-btn {
+    display: block; width: 100%; text-align: center;
+    padding: 0.9rem; border-radius: 8px;
+    font-weight: 700; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s;
+    cursor: pointer; border: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .plan-btn-primary {
+    background: var(--orange); color: #fff;
+  }
+  .plan-btn-primary:hover { background: #d96a10; transform: translateY(-1px); }
+  .plan-btn-outline {
+    background: transparent; color: var(--text);
+    border: 2px solid var(--warm-gray);
+  }
+  .plan-btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+  .all-positions {
+    margin-top: 2rem;
+    background: var(--dark); border-radius: 16px;
+    padding: 2.5rem; text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .all-positions::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(240,123,32,0.2), transparent 60%);
+  }
+  .all-positions-inner { position: relative; z-index: 2; }
+  .all-positions h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem; letter-spacing: 1px;
+  }
+  .all-positions .big-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; color: var(--orange); margin: 0.5rem 0;
+  }
+  .all-positions p { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
+
+  /* SPECIALTIES */
+  .specialties { background: #fff; }
+  .spec-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .spec-card {
+    background: var(--off-white); border-radius: 14px;
+    padding: 2rem 1.5rem; text-align: center;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+  .spec-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(240,123,32,0.1);
+  }
+  .spec-icon {
+    width: 56px; height: 56px; margin: 0 auto 1.2rem;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; color: #fff;
+  }
+  .spec-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 0.5rem;
+  }
+  .spec-card p {
+    font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .spec-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; color: var(--orange);
+  }
+  .spec-price small { font-size: 0.7rem; color: var(--text-muted); font-family: 'DM Sans', sans-serif; }
+
+  .featured-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  .featured-item {
+    background: var(--dark); border-radius: 14px;
+    padding: 2rem; display: flex; align-items: center; justify-content: space-between;
+    transition: transform 0.3s;
+  }
+  .featured-item:hover { transform: translateY(-2px); }
+  .featured-item h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem; color: #fff; letter-spacing: 1px;
+  }
+  .featured-item p { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.2rem; }
+  .featured-item .f-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem; color: var(--orange);
+  }
+
+  /* BUNDLES */
+  .bundles { background: var(--off-white); }
+  .bundle-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .bundle-card {
+    background: #fff; border-radius: 16px; padding: 2.5rem 2rem;
+    border: 1px solid var(--warm-gray);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .bundle-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  }
+  .bundle-card h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem; letter-spacing: 1px;
+  }
+  .bundle-desc {
+    font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;
+    margin: 1rem 0;
+  }
+  .bundle-prices { margin: 1.5rem 0; }
+  .bundle-prices .trio {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; color: var(--orange);
+  }
+  .bundle-prices .trio-label {
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--text-muted);
+  }
+  .bundle-prices .annual {
+    font-size: 0.9rem; color: var(--text-muted); margin-top: 0.3rem;
+  }
+  .bundle-prices .annual strong { color: var(--text); }
+  .new-biz-banner {
+    margin-top: 1.5rem;
+    background: linear-gradient(135deg, var(--orange), #E06910);
+    border-radius: 14px; padding: 2rem; text-align: center; color: #fff;
+  }
+  .new-biz-banner h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem; letter-spacing: 1px;
+  }
+  .new-biz-banner p { font-size: 0.9rem; opacity: 0.85; }
+  .new-biz-banner .nb-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem; margin-top: 0.5rem;
+  }
+
+  /* DISCOUNTS */
+  .discounts { background: #fff; }
+  .discount-row {
+    display: flex; gap: 1.5rem; margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+  .disc-card {
+    flex: 1; min-width: 200px;
+    background: var(--off-white); border-radius: 14px;
+    padding: 2rem; text-align: center;
+    border: 1px solid var(--warm-gray);
+  }
+  .disc-pct {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem; color: var(--orange); line-height: 1;
+  }
+  .disc-card h4 {
+    font-size: 0.85rem; margin-top: 0.5rem;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .disc-note {
+    text-align: center; margin-top: 1rem;
+    font-size: 0.85rem; color: var(--text-muted); font-style: italic;
+  }
+
+  /* AUDIENCE */
+  .audience { background: var(--dark); color: #fff; }
+  .audience .section-title { color: #fff; }
+  .audience-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .aud-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px; padding: 2rem; text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .aud-card:hover {
+    border-color: rgba(240,123,32,0.4);
+    transform: translateY(-2px);
+  }
+  .aud-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem; color: var(--orange); line-height: 1;
+  }
+  .aud-label {
+    font-size: 0.75rem; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; letter-spacing: 1.5px; margin-top: 0.5rem;
+  }
+  .aud-sub {
+    color: rgba(255,255,255,0.5); margin-top: 2rem;
+    display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+  }
+  .aud-sub span { font-size: 0.85rem; }
+  .aud-sub strong { color: var(--orange); }
+
+  /* CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--orange), #E06910);
+    padding: 5rem 3rem; text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.15), transparent 50%);
+  }
+  .cta-section h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 2px; position: relative;
+  }
+  .cta-section p {
+    font-size: 1.1rem; opacity: 0.9;
+    margin: 1rem auto 2rem; max-width: 500px; position: relative;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #fff; color: var(--orange);
+    padding: 1rem 3rem; border-radius: 8px;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none; letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.4);
+    padding: 2rem 3rem; text-align: center;
+    font-size: 0.8rem; border-top: 2px solid var(--orange);
+  }
+  footer span { color: var(--orange); }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+    .plans-grid, .bundle-grid { grid-template-columns: 1fr 1fr; }
+    .spec-grid { grid-template-columns: 1fr 1fr; }
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero-content { padding: 7rem 1.5rem 3rem; }
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .plans-grid, .bundle-grid, .spec-grid { grid-template-columns: 1fr; }
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+    .featured-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TXK<span>today</span></div>
+  <div class="nav-links">
+    <a href="#plans">Plans</a>
+    <a href="#specialties">Specialties</a>
+    <a href="#bundles">Bundles</a>
+    <a href="#contact" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-tag">Media Kit 2025</div>
+      <h1>REACH <em>Texarkana</em><br>WHERE IT MATTERS</h1>
+      <p class="hero-sub">
+        Founded in 2014, TXKtoday is the daily must-read for Texarkana and the surrounding areas &mdash; covering schools, crime, business, events, real estate, and everything in between. Hundreds of thousands of monthly readers. Over 109,000 Facebook followers.
+      </p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">1.1M</div>
+        <div class="stat-label">Yearly Pageviews</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">113K+</div>
+        <div class="stat-label">Monthly Visitors</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">109K+</div>
+        <div class="stat-label">Facebook Followers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">11M</div>
+        <div class="stat-label">FB Pageviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="section-label">About TXKtoday</div>
+    <div class="section-title">THE HEARTBEAT OF <em>Texarkana</em></div>
+    <div class="about-grid">
+      <div class="about-text">
+        With monthly readership in the hundreds of thousands, TXKtoday is the go-to source for local news &mdash; and often where other outlets turn for their Texarkana crime and community coverage. Topics range from schools, business openings, and events to crime, real estate, restaurants, retail, pets, transportation, and daily life across the region.
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">&#x1F4F0;</div>
+          <h4>News &amp; Crime</h4>
+          <p>Breaking coverage the community counts on</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">&#x1F3EB;</div>
+          <h4>Schools</h4>
+          <p>Achievements, events &amp; updates</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">&#x1F3EA;</div>
+          <h4>Business</h4>
+          <p>Openings, retail &amp; restaurants</p>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">&#x1F3E0;</div>
+          <h4>Real Estate</h4>
+          <p>Listings, market &amp; development</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">OUR <em>Process</em></div>
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="tl-dot">1</div>
+        <div class="tl-content">
+          <h4>Client Needs Assessment</h4>
+          <p>We meet with you to discuss your needs and goals.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <h4>Proposal</h4>
+          <p>We craft a proposal that targets your needs and goals.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <h4>Acceptance &amp; Package Selection</h4>
+          <p>When you're ready, accept the proposal and submit your deposit.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">4</div>
+        <div class="tl-content">
+          <h4>Campaign Creation &mdash; 1 week</h4>
+          <p>We draft digital creatives and sponsored content for your approval.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">5</div>
+        <div class="tl-content">
+          <h4>Campaign Launch &mdash; 1&ndash;2 weeks</h4>
+          <p>Your campaign goes live and we make sure it gets attention.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">6</div>
+        <div class="tl-content">
+          <h4>Campaign Check-in</h4>
+          <p>We check in 3 times throughout to ensure performance and satisfaction.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">7</div>
+        <div class="tl-content">
+          <h4>Completion &amp; Review</h4>
+          <p>We review performance and identify the biggest successes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="plans" id="plans">
+  <div class="section-inner">
+    <div class="section-label">Standard Plans</div>
+    <div class="section-title">ADVERTISING <em>Options</em></div>
+    <div class="plans-grid">
+
+      <div class="plan-card">
+        <div class="plan-name">Spotlight</div>
+        <div class="plan-impressions">Est. 80,000+ impressions</div>
+        <div class="plan-price">
+          <span class="amount">$325</span>
+          <span class="period">/mo</span>
+        </div>
+        <div class="plan-annual">or <strong>$3,250/yr</strong></div>
+        <ul class="plan-features">
+          <li>Ad appears in articles</li>
+          <li>Descending sidebar (desktop)</li>
+          <li>Featured article included</li>
+          <li>Free ad design</li>
+        </ul>
+        <button class="plan-btn plan-btn-outline">Get Started</button>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-name">Showcase</div>
+        <div class="plan-impressions">Est. 120,000+ impressions</div>
+        <div class="plan-price">
+          <span class="amount">$750</span>
+          <span class="period">/mo</span>
+        </div>
+        <div class="plan-annual">or <strong>$7,500/yr</strong></div>
+        <ul class="plan-features">
+          <li>Ad above, below &amp; beside Story of the Day</li>
+          <li>Appears in all opened articles</li>
+          <li>Desktop &amp; mobile placement</li>
+          <li>Free ad design</li>
+        </ul>
+        <button class="plan-btn plan-btn-primary">Get Started</button>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-name">Prominence</div>
+        <div class="plan-impressions">Est. 160,000+ impressions</div>
+        <div class="plan-price">
+          <span class="amount">$900</span>
+          <span class="period">/mo</span>
+        </div>
+        <div class="plan-annual">or <strong>$9,000/yr</strong></div>
+        <ul class="plan-features">
+          <li>Top of page video + footer ads</li>
+          <li>All platforms covered</li>
+          <li>Free video creation (2-mo agreement)</li>
+          <li>Free ad design</li>
+        </ul>
+        <button class="plan-btn plan-btn-outline">Get Started</button>
+      </div>
+    </div>
+
+    <div class="all-positions">
+      <div class="all-positions-inner">
+        <h3>ALL AD POSITIONS &mdash; MAXIMUM VISIBILITY</h3>
+        <div class="big-price">$1,650/MO <span style="font-size:1.2rem;color:rgba(255,255,255,0.5)">or $16,500/yr</span></div>
+        <p>Every placement across the entire site, every platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="specialties" id="specialties">
+  <div class="section-inner">
+    <div class="section-label">Specialty Products</div>
+    <div class="section-title">ENGAGE AT THE <em>Right Moment</em></div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-icon">&#x1F4E3;</div>
+        <h4>Community Announcement</h4>
+        <p>Milestones, weddings, graduations, memorial tributes &mdash; posted to TXKtoday.com and preserved forever online.</p>
+        <div class="spec-price">$225</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">&#x1F3F7;&#xFE0F;</div>
+        <h4>New Business Feature</h4>
+        <p>Special rate for new Texarkana businesses. Includes a featured article posted to Facebook. Ribbon-cutting coverage available.</p>
+        <div class="spec-price">$300</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">&#x1F3E1;</div>
+        <h4>Real Estate Weekly</h4>
+        <p>Open house or listing posted to Facebook plus one week of Showcase ads on TXKtoday.com with professional templates.</p>
+        <div class="spec-price">$285</div>
+      </div>
+      <div class="spec-card">
+        <div class="spec-icon">&#x1F4F1;</div>
+        <h4>Facebook Post(s)</h4>
+        <p>Post directly to TXKtoday's Facebook page with an audience of over 107,000+ followers.</p>
+        <div class="spec-price">$350 <small>single</small></div>
+        <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.3rem;">Twin $625 &middot; Six Pack $1,500</div>
+      </div>
+    </div>
+
+    <div class="featured-row">
+      <div class="featured-item">
+        <div>
+          <h4>Featured Article</h4>
+          <p>Posted to TXKtoday.com and Facebook</p>
+        </div>
+        <div class="f-price">$350</div>
+      </div>
+      <div class="featured-item">
+        <div>
+          <h4>Featured Video</h4>
+          <p>Posted to TXKtoday.com and Facebook</p>
+        </div>
+        <div class="f-price">$850</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUNDLES -->
+<section class="bundles" id="bundles">
+  <div class="section-inner">
+    <div class="section-label">Save More</div>
+    <div class="section-title">BUNDLED <em>Value Plans</em></div>
+    <div class="bundle-grid">
+      <div class="bundle-card">
+        <h4>Splash Bundle</h4>
+        <div class="bundle-desc">Spotlight display ads, monthly Facebook post, and a quarterly Featured article.</div>
+        <div class="bundle-prices">
+          <div class="trio-label">3 Months</div>
+          <div class="trio">$1,660</div>
+          <div class="annual">1 Year: <strong>$5,644</strong></div>
+        </div>
+        <button class="plan-btn plan-btn-outline">Learn More</button>
+      </div>
+      <div class="bundle-card" style="border-color:var(--orange);">
+        <h4>Super Bundle</h4>
+        <div class="bundle-desc">Showcase display ads, monthly Facebook posts with an extra to use anytime, and quarterly Featured article.</div>
+        <div class="bundle-prices">
+          <div class="trio-label">3 Months</div>
+          <div class="trio">$3,400</div>
+          <div class="annual">1 Year: <strong>$10,330</strong></div>
+        </div>
+        <button class="plan-btn plan-btn-primary">Learn More</button>
+      </div>
+      <div class="bundle-card">
+        <h4>Maximum Bundle</h4>
+        <div class="bundle-desc">Prominence display ads, two monthly Facebook posts, and a quarterly Featured video.</div>
+        <div class="bundle-prices">
+          <div class="trio-label">3 Months</div>
+          <div class="trio">$4,040</div>
+          <div class="annual">1 Year: <strong>$11,540</strong></div>
+        </div>
+        <button class="plan-btn plan-btn-outline">Learn More</button>
+      </div>
+    </div>
+
+    <div class="new-biz-banner">
+      <h4>NEW BUSINESS LAUNCH PACKAGE</h4>
+      <p>One week of Showcase ads, one Facebook post, and one Featured Article</p>
+      <div class="nb-price">$425</div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOUNTS -->
+<section class="discounts">
+  <div class="section-inner">
+    <div class="section-label">Save Even More</div>
+    <div class="section-title">AVAILABLE <em>Discounts</em></div>
+    <div class="discount-row">
+      <div class="disc-card">
+        <div class="disc-pct">5%</div>
+        <h4>Credit Card on File</h4>
+      </div>
+      <div class="disc-card">
+        <div class="disc-pct">5%</div>
+        <h4>Auto Recurring Billing</h4>
+      </div>
+      <div class="disc-card">
+        <div class="disc-pct">10%</div>
+        <h4>Nonprofits</h4>
+      </div>
+    </div>
+    <p class="disc-note">Discounts can be combined for maximum savings.</p>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience">
+  <div class="section-inner">
+    <div class="section-label">Our Audience</div>
+    <div class="section-title">WHO READS <em>TXKtoday?</em></div>
+    <div class="audience-grid">
+      <div class="aud-card">
+        <div class="aud-num">1.1M</div>
+        <div class="aud-label">Yearly Pageviews</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-num">113K+</div>
+        <div class="aud-label">Unique Monthly Visitors</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-num">45+</div>
+        <div class="aud-label">Minutes Per Month</div>
+      </div>
+      <div class="aud-card">
+        <div class="aud-num">31.5K+</div>
+        <div class="aud-label">FB News Group Members</div>
+      </div>
+    </div>
+    <div class="aud-sub">
+      <span>Readers: <strong>66.6% Women</strong> &middot; 33.4% Men</span>
+      <span>Peak ages: <strong>25&ndash;54</strong></span>
+      <span>Morning Email subscribers: <strong>2,500+</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>READY TO GROW YOUR BUSINESS?</h2>
+  <p>Let's build a campaign that gets results. Reach out today and we'll start with a free needs assessment.</p>
+  <a href="mailto:Stephen@TXKtoday.com" class="cta-btn">Contact Stephen</a>
+  <div style="margin-top:1rem;font-size:0.9rem;opacity:0.8;position:relative;">Stephen@TXKtoday.com &middot; 903.367.4255</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 <span>TXKtoday</span>. All rights reserved. &middot; Free ad design included with all plans.
+</footer>
+
+</body>
+</html>
