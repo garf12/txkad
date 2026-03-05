@@ -7,11 +7,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --orange: #F07B20;
-    --orange-light: #F9A825;
+    --orange: #ff9000;
+    --blue: #0090ff;
     --dark: #111111;
-    --off-white: #FAF8F5;
-    --warm-gray: #E8E3DC;
+    --off-white: #F5F8FC;
+    --warm-gray: #DDE3EB;
     --text: #2A2A2A;
     --text-muted: #6B6560;
   }
@@ -51,7 +51,7 @@
     background: var(--orange); color: #fff !important; padding: 0.6rem 1.4rem;
     border-radius: 4px; font-weight: 700; transition: transform 0.2s, background 0.3s;
   }
-  .nav-cta:hover { transform: translateY(-1px); background: #d96a10; }
+  .nav-cta:hover { transform: translateY(-1px); background: #cc7400; }
 
   /* HERO */
   .hero {
@@ -63,8 +63,8 @@
   .hero::before {
     content: ''; position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(240,123,32,0.15), transparent),
-      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(240,123,32,0.08), transparent);
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(255,144,0,0.15), transparent),
+      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(255,144,0,0.08), transparent);
   }
   .hero-grid-bg {
     position: absolute; inset: 0; opacity: 0.04;
@@ -81,7 +81,7 @@
   }
   .hero-tag {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(240,123,32,0.15); border: 1px solid rgba(240,123,32,0.3);
+    background: rgba(255,144,0,0.15); border: 1px solid rgba(255,144,0,0.3);
     border-radius: 100px; padding: 0.4rem 1.2rem;
     font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
     color: var(--orange); margin-bottom: 1.5rem;
@@ -121,7 +121,7 @@
     transition: border-color 0.3s, transform 0.3s;
   }
   .stat-card:hover {
-    border-color: rgba(240,123,32,0.4);
+    border-color: rgba(255,144,0,0.4);
     transform: translateY(-2px);
   }
   .stat-num {
@@ -176,7 +176,7 @@
   }
   .highlight-icon {
     width: 36px; height: 36px; border-radius: 8px;
-    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    background: linear-gradient(135deg, var(--orange), var(--blue));
     display: flex; align-items: center; justify-content: center;
     color: #fff; font-size: 1rem; margin-bottom: 0.8rem;
   }
@@ -192,7 +192,7 @@
   .timeline { margin-top: 3rem; position: relative; }
   .timeline::before {
     content: ''; position: absolute; left: 24px; top: 0; bottom: 0;
-    width: 2px; background: linear-gradient(to bottom, var(--orange), rgba(240,123,32,0.1));
+    width: 2px; background: linear-gradient(to bottom, var(--orange), rgba(255,144,0,0.1));
   }
   .tl-step {
     display: flex; gap: 2rem; padding: 1.5rem 0;
@@ -242,7 +242,7 @@
   }
   .plan-card.featured {
     border: 2px solid var(--orange);
-    background: linear-gradient(180deg, #fff 0%, #FFF8F0 100%);
+    background: linear-gradient(180deg, #fff 0%, #EEF5FF 100%);
   }
   .plan-card.featured::before {
     content: 'MOST POPULAR';
@@ -298,7 +298,7 @@
   .plan-btn-primary {
     background: var(--orange); color: #fff;
   }
-  .plan-btn-primary:hover { background: #d96a10; transform: translateY(-1px); }
+  .plan-btn-primary:hover { background: #cc7400; transform: translateY(-1px); }
   .plan-btn-outline {
     background: transparent; color: var(--text);
     border: 2px solid var(--warm-gray);
@@ -313,7 +313,7 @@
   }
   .all-positions::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(240,123,32,0.2), transparent 60%);
+    background: radial-gradient(circle at 30% 50%, rgba(255,144,0,0.2), transparent 60%);
   }
   .all-positions-inner { position: relative; z-index: 2; }
   .all-positions h3 {
@@ -341,12 +341,12 @@
   .spec-card:hover {
     border-color: var(--orange);
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(240,123,32,0.1);
+    box-shadow: 0 12px 40px rgba(255,144,0,0.1);
   }
   .spec-icon {
     width: 56px; height: 56px; margin: 0 auto 1.2rem;
     border-radius: 14px;
-    background: linear-gradient(135deg, var(--orange), var(--orange-light));
+    background: linear-gradient(135deg, var(--orange), var(--blue));
     display: flex; align-items: center; justify-content: center;
     font-size: 1.5rem; color: #fff;
   }
@@ -423,7 +423,7 @@
   .bundle-prices .annual strong { color: var(--text); }
   .new-biz-banner {
     margin-top: 1.5rem;
-    background: linear-gradient(135deg, var(--orange), #E06910);
+    background: linear-gradient(135deg, var(--orange), #cc7400);
     border-radius: 14px; padding: 2rem; text-align: center; color: #fff;
   }
   .new-biz-banner h4 {
@@ -475,7 +475,7 @@
     transition: border-color 0.3s, transform 0.3s;
   }
   .aud-card:hover {
-    border-color: rgba(240,123,32,0.4);
+    border-color: rgba(255,144,0,0.4);
     transform: translateY(-2px);
   }
   .aud-num {
@@ -495,7 +495,7 @@
 
   /* CTA */
   .cta-section {
-    background: linear-gradient(135deg, var(--orange), #E06910);
+    background: linear-gradient(135deg, var(--orange), #cc7400);
     padding: 5rem 3rem; text-align: center; color: #fff;
     position: relative; overflow: hidden;
   }
